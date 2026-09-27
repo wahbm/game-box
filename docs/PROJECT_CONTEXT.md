@@ -6,7 +6,7 @@
 
 “拾趣”是可扩展的轻量游戏盒，首版面向 PC/手机浏览器，现代浅色界面、简体中文、无需登录、本地自动存档。未来以更复杂的 2D 单机游戏为主，通过统一生命周期接入不同渲染方式。
 
-当前目录从空目录完成首版及一轮体验打磨。已初始化 Git，远端为公开仓库 [wahbm/game-box](https://github.com/wahbm/game-box)，主分支 `main`、远端名 `origin`。已配置 GitHub Pages（目标 https://wahbm.github.io/game-box/），无自定义域名。CI 检查和测试通过后自动发布 main；运行结果以远端 Actions 为准。发布使用 VITE_BASE_PATH=/game-box/，本地保持根路径。本地预览曾使用 5173，接手时需确认进程，勿假定仍运行。
+当前目录从空目录完成首版及一轮体验打磨。已初始化 Git，远端为公开仓库 [wahbm/game-box](https://github.com/wahbm/game-box)，主分支 `main`、远端名 `origin`。GitHub Pages 已上线：https://wahbm.github.io/game-box/ ，无自定义域名。发布提交 `8aba475` 已通过远端完整 CI 与公网游戏入口/刷新续玩检查。CI 检查和测试通过后自动发布 main；运行结果以远端 Actions 为准。发布使用 VITE_BASE_PATH=/game-box/，本地保持根路径。本地预览曾使用 5173，接手时需确认进程，勿假定仍运行。
 
 ## 技术与入口
 

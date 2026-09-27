@@ -8,7 +8,7 @@
 
 新增连连看消除路径、状态图例与触控按钮优化。浏览器回归覆盖外圈路径、下方行端点对齐、横竖屏切换、纸牌放大及模拟 visibilitychange 后的暂停与恢复。
 
-iOS Safari 与 Android Chrome 物理设备尚未验收；未部署到公网。
+GitHub Pages 已发布：https://wahbm.github.io/game-box/ 。发布提交 `8aba475` 的 [Actions](https://github.com/wahbm/game-box/actions/runs/36321061222) 已通过全部检查、65 项浏览器测试及部署。公网 Chromium 手机视口验证首页 HTTP 200、三款游戏直接深链接、魔塔操作后刷新恢复，无页面异常或 HTTP 失败资源。iOS Safari 与 Android Chrome 物理设备尚未验收。
 
 ## 自动化覆盖
 
@@ -30,6 +30,8 @@ iOS Safari 与 Android Chrome 物理设备尚未验收；未部署到公网。
 浏览器设备模拟不等同于实机。没有物理设备时，本清单保持待验收，不宣称已经通过。
 
 ## 发布操作
+
+当前使用 `.github/workflows/ci.yml`：main 推送或手动触发运行，检查/测试成功后上传 dist 并部署 Pages；PR 不发布。构建使用 `VITE_BASE_PATH=/game-box/`，不将该路径应用于本地开发服务器。
 
 执行 `pnpm check`、`pnpm test:e2e` 并完成真机检查后上传 `dist/`。HTML 不设长期缓存；带哈希资源可长期缓存。部署时保留上一版带哈希资源一段时间，避免已打开旧页面的动态导入失败；先上传资源再切换 HTML。需要回滚时恢复上一份完整构建，且不得回退到无法识别新存档的游戏版本。
 
