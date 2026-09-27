@@ -51,4 +51,4 @@ packages/tower     魔塔 manifest / rules / UI / 内容数据
 
 `pnpm build` 生成 `dist/`。将目录发布到支持静态资源的 HTTPS 主机即可；路由使用 `/#/games/link` 等 hash URL，不要求服务端配置页面重写。默认部署在域名根目录；子目录部署时需设置 Vite `base` 并重新构建。没有服务端或数据库部署步骤。
 
-远端仓库：[wahbm/game-box](https://github.com/wahbm/game-box)（私有），主分支 `main`。未绑定域名或托管平台，也未自动发布。
+远端仓库：[wahbm/game-box](https://github.com/wahbm/game-box)（公开），主分支 `main`。已选择 GitHub Pages，目标地址为 https://wahbm.github.io/game-box/ ，未绑定自定义域名。`main` 推送或手动运行 CI 会在检查、测试通过后发布；PR 只检查不发布。发布构建设置 `VITE_BASE_PATH=/game-box/`，本地开发默认根路径。
