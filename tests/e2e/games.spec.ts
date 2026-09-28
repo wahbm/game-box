@@ -2,10 +2,11 @@ import { test, expect, type Page } from '@playwright/test';
 import { createLink, hint } from '@game-box/link/rules';
 import { createSpider, type SpiderState } from '@game-box/spider/rules';
 import { createTower, floors } from '@game-box/tower/rules';
-async function seed(page: Page, id: string, state: unknown, backup?: unknown) {
+import legacyTower from '../fixtures/tower-v1.json';
+async function seed(page: Page, id: string, state: unknown, backup?: unknown, legacy = false) {
   await page.goto('/');
   await page.evaluate(
-    async ({ id, state, backup }) => {
+    async ({ id, state, backup, legacy }) => {
       await new Promise<void>((resolve, reject) => {
         const request = indexedDB.open('game-box', 10);
         request.onupgradeneeded = () => {
@@ -21,16 +22,16 @@ async function seed(page: Page, id: string, state: unknown, backup?: unknown) {
           const tx = db.transaction(['saves', 'backups'], 'readwrite');
           tx.objectStore('saves').put({
             gameId: id,
-            schemaVersion: 1,
-            contentVersion: 1,
+            schemaVersion: id === 'tower' && !legacy ? 2 : 1,
+            contentVersion: id === 'tower' && !legacy ? 2 : 1,
             updatedAt: Date.now(),
             state,
           });
           if (backup)
             tx.objectStore('backups').put({
               gameId: id,
-              schemaVersion: 1,
-              contentVersion: 1,
+              schemaVersion: id === 'tower' && !legacy ? 2 : 1,
+              contentVersion: id === 'tower' && !legacy ? 2 : 1,
               updatedAt: Date.now() - 1,
               state: backup,
             });
@@ -42,7 +43,7 @@ async function seed(page: Page, id: string, state: unknown, backup?: unknown) {
         };
       });
     },
-    { id, state, backup },
+    { id, state, backup, legacy },
   );
   await page.goto(`/#/games/${id}`);
 }
@@ -148,7 +149,7 @@ test('魔塔：塔顶战斗结算与离开后的键盘清理', async ({ page }) 
   s.hero.attack = 500;
   s.hero.defense = 500;
   await seed(page, 'tower', s);
-  await expect(page.getByText('长夜守卫')).toBeVisible();
+  await expect(page.getByRole('heading', { name: '长夜守卫', exact: true })).toBeVisible();
   await page.getByRole('button', { name: '向右移动' }).click();
   await expect(page.getByRole('heading', { name: '长夜已尽，黎明到来。' })).toBeVisible();
   await expect.poll(async () => (await saved(page, 'tower'))?.won).toBe(true);
@@ -270,4 +271,63 @@ test('手机验收：切后台后保持暂停，恢复后才接受输入', async
   await page.getByRole('button', { name: '继续游戏 →', exact: true }).click();
   await page.getByRole('button', { name: '向右移动' }).click();
   await expect.poll(async () => (await saved(page, 'tower'))?.x).toBe(2);
+});
+
+test('魔塔升级：地图点选只检查，图例和完整战斗预览可用', async ({ page }) => {
+  await seed(page, 'tower', createTower());
+  await page.getByRole('button', { name: '查看怪物 第2行第8列', exact: true }).click();
+  const inspector = page.getByRole('region', { name: '地图详情', exact: true });
+  await expect(inspector).toContainText('青苔怪');
+  await expect(inspector).toContainText('生命 55');
+  await expect(inspector).toContainText('预计损失');
+  await expect(inspector).toContainText('敌人反击');
+  expect((await saved(page, 'tower')).hero.hp).toBe(600);
+  expect((await saved(page, 'tower')).x).toBe(1);
+  await page.getByRole('button', { name: '查看精英 第3行第4列', exact: true }).click();
+  await expect(inspector).toContainText('荆棘卫士');
+  await expect(inspector).toContainText('高风险高回报');
+  await page.getByRole('button', { name: '查看红宝石 第2行第6列', exact: true }).click();
+  await expect(inspector).toContainText('永久攻击 +5');
+  await page.getByText('地图图例与探索规则', { exact: true }).click();
+  await expect(page.locator('.tower-legend')).toContainText('精英');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.reload();
+  await expect(inspector).toContainText('附近没有敌人');
+});
+
+test('魔塔升级：商店展示收益并精确购买，回退可恢复属性', async ({ page }) => {
+  const s = createTower();
+  s.x = 2;
+  s.y = 3;
+  s.hero.gold = 100;
+  await seed(page, 'tower', s);
+  const shop = page.getByRole('region', { name: '旅人商店', exact: true });
+  await expect(shop).toContainText('拥有 100 金币');
+  await expect(shop).toContainText('30 金币');
+  await shop.getByRole('button', { name: /攻击 \+5/ }).click();
+  await expect.poll(async () => (await saved(page, 'tower')).hero.attack).toBe(21);
+  await expect(shop).toContainText('拥有 70 金币');
+  await expect(shop).toContainText('21 → 26');
+  await page.reload();
+  await expect(shop).toContainText('拥有 70 金币');
+  page.once('dialog', (d) => d.accept());
+  await page.getByRole('button', { name: '↶ 回到本层入口' }).click();
+  await expect.poll(async () => (await saved(page, 'tower')).hero.attack).toBe(16);
+  await expect(shop).toHaveCount(0);
+});
+
+test('魔塔升级：线上旧版存档无损续玩，新开局切换升级版', async ({ page }) => {
+  await seed(page, 'tower', legacyTower, undefined, true);
+  await expect(page.locator('.tower-legacy')).toContainText('已保留原地图、数值与进度');
+  await expect.poll(async () => (await saved(page, 'tower')).campaignVersion).toBe(1);
+  expect((await saved(page, 'tower')).maps).toEqual(legacyTower.maps);
+  expect((await saved(page, 'tower')).hero).toEqual(legacyTower.hero);
+  await page.getByRole('button', { name: '查看怪物 第2行第8列', exact: true }).click();
+  await expect(page.getByRole('region', { name: '地图详情' })).toContainText('生命 24');
+  await page.reload();
+  await expect(page.locator('.tower-legacy')).toBeVisible();
+  page.once('dialog', (d) => d.accept());
+  await page.getByRole('button', { name: '↻ 新游戏' }).click();
+  await expect(page.locator('.tower-legacy')).toHaveCount(0);
+  await expect.poll(async () => (await saved(page, 'tower')).campaignVersion).toBe(2);
 });

@@ -40,6 +40,7 @@ export interface GameManifest {
   version: string;
   saveVersion: number;
   contentVersion: number;
+  compatibleContentVersions?: number[];
   rules: string;
   load(): Promise<GameModule>;
 }

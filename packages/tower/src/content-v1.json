@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 1,
   "floors": [
     {
       "id": 1,
@@ -7,8 +7,8 @@
       "map": [
         "#########",
         "#<.k.a.m#",
-        "###e###.#",
-        "#.s.pkd.#",
+        "###m###.#",
+        "#.s.p.d.#",
         "#.###d###",
         "#v.m..g.#",
         "###m###.#",
@@ -52,37 +52,24 @@
       ],
       "monster": {
         "name": "青苔怪",
-        "hp": 55,
-        "attack": 20,
-        "defense": 7,
-        "gold": 12
+        "hp": 24,
+        "attack": 13,
+        "defense": 2,
+        "gold": 10
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 22,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 22,
-          "attack": 30,
-          "defense": 26
-        }
-      },
-      "elite": {
-        "name": "荆棘卫士",
-        "hp": 85,
-        "attack": 26,
-        "defense": 10,
-        "gold": 34
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 15,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     },
     {
       "id": 2,
@@ -90,9 +77,9 @@
       "map": [
         "#########",
         "#m.a.k.<#",
-        "#.###e###",
-        "#.dkp.s.#",
-        "###d###.#",
+        "#.###d###",
+        "#.d.p.s.#",
+        "###m###.#",
         "#.g..m.v#",
         "#.###m###",
         "#a..p..>#",
@@ -135,37 +122,24 @@
       ],
       "monster": {
         "name": "石甲卫",
-        "hp": 79,
-        "attack": 28,
-        "defense": 12,
-        "gold": 14
+        "hp": 36,
+        "attack": 18,
+        "defense": 5,
+        "gold": 12
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 26,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 26,
-          "attack": 34,
-          "defense": 30
-        }
-      },
-      "elite": {
-        "name": "回声骑士",
-        "hp": 115,
-        "attack": 35,
-        "defense": 15,
-        "gold": 38
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 17,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     },
     {
       "id": 3,
@@ -173,8 +147,8 @@
       "map": [
         "#########",
         "#<.k.a.m#",
-        "###e###.#",
-        "#.s.pkd.#",
+        "###m###.#",
+        "#.s.p.d.#",
         "#.###d###",
         "#v.m..g.#",
         "###m###.#",
@@ -218,37 +192,24 @@
       ],
       "monster": {
         "name": "铜翼蝠",
-        "hp": 103,
-        "attack": 36,
-        "defense": 17,
-        "gold": 16
+        "hp": 48,
+        "attack": 23,
+        "defense": 8,
+        "gold": 14
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 30,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 30,
-          "attack": 38,
-          "defense": 34
-        }
-      },
-      "elite": {
-        "name": "铜翼首领",
-        "hp": 145,
-        "attack": 44,
-        "defense": 20,
-        "gold": 42
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 19,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     },
     {
       "id": 4,
@@ -256,9 +217,9 @@
       "map": [
         "#########",
         "#m.a.k.<#",
-        "#.###e###",
-        "#.dkp.s.#",
-        "###d###.#",
+        "#.###d###",
+        "#.d.p.s.#",
+        "###m###.#",
         "#.g..m.v#",
         "#.###m###",
         "#a..p..>#",
@@ -301,37 +262,24 @@
       ],
       "monster": {
         "name": "守书灵",
-        "hp": 127,
-        "attack": 44,
-        "defense": 22,
-        "gold": 18
+        "hp": 60,
+        "attack": 28,
+        "defense": 11,
+        "gold": 16
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 34,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 34,
-          "attack": 42,
-          "defense": 38
-        }
-      },
-      "elite": {
-        "name": "禁书守卫",
-        "hp": 175,
-        "attack": 53,
-        "defense": 25,
-        "gold": 46
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 21,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     },
     {
       "id": 5,
@@ -339,8 +287,8 @@
       "map": [
         "#########",
         "#<.k.a.m#",
-        "###e###.#",
-        "#.s.pkd.#",
+        "###m###.#",
+        "#.s.p.d.#",
         "#.###d###",
         "#v.m..g.#",
         "###m###.#",
@@ -384,37 +332,24 @@
       ],
       "monster": {
         "name": "藤甲兵",
-        "hp": 151,
-        "attack": 52,
-        "defense": 27,
-        "gold": 20
+        "hp": 72,
+        "attack": 33,
+        "defense": 14,
+        "gold": 18
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 38,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 38,
-          "attack": 46,
-          "defense": 42
-        }
-      },
-      "elite": {
-        "name": "庭院猎手",
-        "hp": 205,
-        "attack": 62,
-        "defense": 30,
-        "gold": 50
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 23,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     },
     {
       "id": 6,
@@ -422,9 +357,9 @@
       "map": [
         "#########",
         "#m.a.k.<#",
-        "#.###e###",
-        "#.dkp.s.#",
-        "###d###.#",
+        "#.###d###",
+        "#.d.p.s.#",
+        "###m###.#",
         "#.g..m.v#",
         "#.###m###",
         "#a..p..>#",
@@ -467,37 +402,24 @@
       ],
       "monster": {
         "name": "长阶卫",
-        "hp": 175,
-        "attack": 60,
-        "defense": 32,
-        "gold": 22
+        "hp": 84,
+        "attack": 38,
+        "defense": 17,
+        "gold": 20
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 42,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 42,
-          "attack": 50,
-          "defense": 46
-        }
-      },
-      "elite": {
-        "name": "高阶守卫",
-        "hp": 235,
-        "attack": 71,
-        "defense": 35,
-        "gold": 54
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 25,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     },
     {
       "id": 7,
@@ -505,8 +427,8 @@
       "map": [
         "#########",
         "#<.k.a.m#",
-        "###e###.#",
-        "#.s.pkd.#",
+        "###m###.#",
+        "#.s.p.d.#",
         "#.###d###",
         "#v.m..g.#",
         "###m###.#",
@@ -550,37 +472,24 @@
       ],
       "monster": {
         "name": "琥珀兽",
-        "hp": 199,
-        "attack": 68,
-        "defense": 37,
-        "gold": 24
+        "hp": 96,
+        "attack": 43,
+        "defense": 20,
+        "gold": 22
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 46,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 46,
-          "attack": 54,
-          "defense": 50
-        }
-      },
-      "elite": {
-        "name": "琥珀巨兽",
-        "hp": 265,
-        "attack": 80,
-        "defense": 40,
-        "gold": 58
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 27,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     },
     {
       "id": 8,
@@ -588,9 +497,9 @@
       "map": [
         "#########",
         "#m.a.k.<#",
-        "#.###e###",
-        "#.dkp.s.#",
-        "###d###.#",
+        "#.###d###",
+        "#.d.p.s.#",
+        "###m###.#",
         "#.g..m.v#",
         "#.###m###",
         "#a..p..>#",
@@ -633,37 +542,24 @@
       ],
       "monster": {
         "name": "王座卫",
-        "hp": 223,
-        "attack": 76,
-        "defense": 42,
-        "gold": 26
+        "hp": 108,
+        "attack": 48,
+        "defense": 23,
+        "gold": 24
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 50,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 50,
-          "attack": 58,
-          "defense": 54
-        }
-      },
-      "elite": {
-        "name": "王座骑士",
-        "hp": 295,
-        "attack": 89,
-        "defense": 45,
-        "gold": 62
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 29,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     },
     {
       "id": 9,
@@ -671,8 +567,8 @@
       "map": [
         "#########",
         "#<.k.a.m#",
-        "###e###.#",
-        "#.s.pkd.#",
+        "###m###.#",
+        "#.s.p.d.#",
         "#.###d###",
         "#v.m..g.#",
         "###m###.#",
@@ -716,37 +612,24 @@
       ],
       "monster": {
         "name": "星火灵",
-        "hp": 247,
-        "attack": 84,
-        "defense": 47,
-        "gold": 28
+        "hp": 120,
+        "attack": 53,
+        "defense": 26,
+        "gold": 26
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 54,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 54,
-          "attack": 62,
-          "defense": 58
-        }
-      },
-      "elite": {
-        "name": "星火统领",
-        "hp": 325,
-        "attack": 98,
-        "defense": 50,
-        "gold": 66
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 31,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     },
     {
       "id": 10,
@@ -754,9 +637,9 @@
       "map": [
         "#########",
         "#m.a.k.<#",
-        "#.###e###",
-        "#.dkp.s.#",
-        "###d###.#",
+        "#.###d###",
+        "#.d.p.s.#",
+        "###m###.#",
         "#.g..m.v#",
         "#.###m###",
         "#a..p..B#",
@@ -799,43 +682,24 @@
       ],
       "monster": {
         "name": "塔顶卫",
-        "hp": 271,
-        "attack": 92,
-        "defense": 52,
-        "gold": 30
+        "hp": 132,
+        "attack": 58,
+        "defense": 29,
+        "gold": 28
       },
       "boss": {
         "name": "长夜守卫",
-        "hp": 500,
-        "attack": 110,
-        "defense": 65,
+        "hp": 260,
+        "attack": 75,
+        "defense": 40,
         "gold": 100
       },
       "shop": {
-        "cost": 58,
-        "hp": 160,
-        "attack": 5,
-        "defense": 4,
-        "costs": {
-          "hp": 58,
-          "attack": 66,
-          "defense": 62
-        }
-      },
-      "elite": {
-        "name": "长夜禁卫",
-        "hp": 355,
-        "attack": 107,
-        "defense": 55,
-        "gold": 70
-      },
-      "tip": "正路可以取得宝石与补给；精英通道金币更多，但战损更高。黄门捷径消耗钥匙，可能错过途中的成长。"
+        "cost": 33,
+        "hp": 120,
+        "attack": 4,
+        "defense": 3
+      }
     }
-  ],
-  "items": {
-    "attack": 5,
-    "defense": 4,
-    "potion": 100,
-    "gold": 20
-  }
+  ]
 }

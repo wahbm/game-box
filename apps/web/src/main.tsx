@@ -233,7 +233,11 @@ function GameHost({ game }: { game: GameManifest }) {
           setNotice('本地存储不可用，进度无法保存。');
         }
         const decode = (record: SaveRecord) => {
-          if (record.gameId !== game.id || record.contentVersion !== game.contentVersion)
+          if (
+            record.gameId !== game.id ||
+            (record.contentVersion !== game.contentVersion &&
+              !game.compatibleContentVersions?.includes(record.contentVersion))
+          )
             throw new Error('内容版本不兼容');
           const value = module.migrate(record.state, record.schemaVersion);
           if (!module.validate(value)) throw new Error('存档无效');

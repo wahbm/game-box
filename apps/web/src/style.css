@@ -1519,3 +1519,341 @@ footer {
 .tile {
   line-height: 1;
 }
+
+/* Tower details are game-scoped; inspection never changes the saved position. */
+.tower-mission {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: #edf1e5;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: #4d6548;
+  font-size: 13px;
+}
+.tower-mission small {
+  color: #72816c;
+}
+.tower-legacy {
+  font-size: 12px;
+  color: #8b7441;
+  background: #f7efdb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+.tower-map-panel {
+  min-width: 0;
+}
+.tower-map-help {
+  font-size: 11px;
+  color: #75836c;
+  text-align: center;
+  margin-top: 9px;
+}
+.tower-board button.tower-cell {
+  padding: 0;
+  border-radius: 0;
+  min-width: 0;
+  line-height: 1;
+  transition: none;
+}
+.tower-board button.tower-cell:disabled {
+  opacity: 1;
+}
+.tower-board button.cell-wall:disabled {
+  cursor: default;
+}
+.tower-board button.tower-cell:hover:not(:disabled) {
+  background: #ede6d1;
+  transform: none;
+}
+.tower-board button.inspected {
+  outline: 3px solid #d7aa51;
+  outline-offset: -3px;
+  z-index: 1;
+}
+.cell-e {
+  color: #905658;
+  background: #e2c8b6;
+}
+.tower-advice {
+  font-size: 12px;
+  color: #6d7c60;
+  line-height: 1.8;
+}
+.tower-advice p {
+  margin-top: 8px;
+}
+.tower-inspector {
+  max-width: 708px;
+  margin: 20px auto 0;
+  border: 1px solid #e0e5d6;
+  border-radius: 12px;
+  padding: 16px;
+  background: #f8f9f2;
+}
+.inspector-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.inspector-heading h3 {
+  font-size: 14px;
+}
+.inspector-heading button {
+  font-size: 11px;
+  padding: 6px 10px;
+}
+.inspector-empty {
+  font-size: 12px;
+  color: #7a866f;
+  line-height: 1.8;
+}
+.tile-description {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.tile-description > span {
+  font-size: 30px;
+  width: 40px;
+  text-align: center;
+  background: none;
+}
+.tile-description b {
+  font-size: 14px;
+}
+.tile-description p {
+  font-size: 12px;
+  color: #728269;
+  margin-top: 5px;
+}
+.nearby-enemies {
+  display: grid;
+  gap: 10px;
+}
+.tower-enemy {
+  border: 1px solid #dce5d2;
+  background: #fffef8;
+  border-radius: 9px;
+  padding: 13px;
+}
+.tower-enemy.danger {
+  border-color: #e6c5bb;
+}
+.enemy-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+.enemy-title h4 {
+  margin: 0;
+  font-size: 15px;
+}
+.enemy-title > span {
+  font-size: 10px;
+  color: #8a947c;
+}
+.monster-attributes {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #78866e;
+  margin: 10px 0;
+}
+.monster-attributes b {
+  color: #506344;
+}
+.battle-result {
+  display: flex;
+  justify-content: space-between;
+  gap: 9px;
+  flex-wrap: wrap;
+  background: #edf3e5;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #567342;
+}
+.danger .battle-result {
+  background: #f6e7e0;
+  color: #9c5e4d;
+}
+.tower-enemy > p {
+  font-size: 11px;
+  color: #7d876f;
+  margin-top: 9px;
+}
+.tower-shop {
+  max-width: 708px;
+  margin: 18px auto;
+  background: #f6f0df;
+  border: 1px solid #e5dcc3;
+  border-radius: 12px;
+  padding: 18px;
+}
+.tower-shop h3 {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.tower-shop h3 span {
+  font-size: 12px;
+  color: #8d774a;
+}
+.tower-shop > p {
+  font-size: 12px;
+  color: #8a805f;
+  margin: 7px 0 13px;
+}
+.shop-offers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.shop-offers button {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: left;
+  padding: 12px;
+}
+.shop-offers strong {
+  font-size: 15px;
+}
+.shop-offers span {
+  font-size: 12px;
+  color: #7e886f;
+}
+.shop-offers b {
+  font-size: 12px;
+  color: #9b7b36;
+}
+.shop-offers small {
+  font-size: 10px;
+  line-height: 1.7;
+}
+.shop-offers button:disabled {
+  opacity: 0.65;
+}
+.tower-legend {
+  max-width: 708px;
+  margin: 22px auto 0;
+  border-top: 1px solid #e0e5d6;
+  padding-top: 14px;
+}
+.tower-legend summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: #62785b;
+  padding: 8px 0;
+}
+.tower-legend > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  font-size: 11px;
+  margin: 12px 0;
+}
+.tower-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.tower-legend i {
+  font-size: 22px;
+  font-style: normal;
+  background: none;
+}
+.tower-legend p {
+  font-size: 11px;
+  color: #7c886e;
+  line-height: 1.9;
+}
+@media (max-width: 700px) {
+  .tower-mission {
+    font-size: 11px;
+    gap: 5px;
+    padding: 10px;
+    margin-bottom: 14px;
+  }
+  .tower-mission small {
+    font-size: 10px;
+  }
+  .tower-map-panel {
+    width: 100%;
+    max-width: 420px;
+    align-self: center;
+  }
+  .tower-advice {
+    grid-column: 1/3;
+    font-size: 11px;
+    border-top: 1px solid #dce2d2;
+    padding-top: 7px;
+  }
+  .tower-advice p {
+    margin-top: 4px;
+  }
+  .tower-inspector {
+    padding: 12px;
+    margin-top: 14px;
+  }
+  .monster-attributes {
+    gap: 7px 12px;
+    font-size: 11px;
+  }
+  .battle-result {
+    font-size: 11px;
+  }
+  .tower-shop {
+    padding: 12px;
+  }
+  .shop-offers {
+    gap: 6px;
+  }
+  .shop-offers button {
+    padding: 9px 6px;
+  }
+  .shop-offers strong {
+    font-size: 12px;
+  }
+  .shop-offers small {
+    font-size: 9px;
+  }
+  .tower-legend > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .tower-controls {
+    flex-wrap: wrap;
+  }
+  .game-tower .tower-board .tower-cell {
+    font-size: 22px;
+  }
+}
+.game-tower .tower-map-panel .tower-controls {
+  margin-top: 14px;
+  gap: 16px;
+}
+.game-tower .tower-map-panel .tower-controls > button {
+  padding: 9px;
+  font-size: 11px;
+}
+.tower-nearby-summary {
+  display: grid;
+  gap: 4px;
+  padding: 9px 12px;
+  margin-top: 8px;
+  background: #f6efd9;
+  border-radius: 8px;
+  color: #826b36;
+  font-size: 11px;
+}

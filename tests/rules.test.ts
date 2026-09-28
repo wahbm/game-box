@@ -129,8 +129,8 @@ describe('魔塔', () => {
     expect(damage(h, { hp: 10, attack: 99, defense: 0, gold: 0, name: '' })).toBe(0);
     expect(damage(h, { hp: 10, attack: 1, defense: 10, gold: 0, name: '' })).toBe(Infinity);
   });
-  it('固定路线贯通十层并击败 Boss，无需购买属性', () => {
-    let s = createTower();
+  it('经典版固定路线贯通十层并击败 Boss，无需购买属性', () => {
+    let s = createTower(1);
     for (let f = 0; f < 10; f++) {
       const route = floors[f].route;
       for (let i = 1; i < route.length; i++) {
@@ -159,7 +159,7 @@ describe('魔塔', () => {
     expect(rewind(s).x).toBe(1);
   });
   it('商店检查位置及金币，购买影响属性', () => {
-    const s = createTower();
+    const s = createTower(1);
     s.x = 2;
     s.y = 3;
     s.hero.gold = 30;
